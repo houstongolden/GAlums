@@ -1,11 +1,28 @@
 source 'https://rubygems.org'
 
+# specify the ruby version
+ruby '2.0.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
 
 # this gem helps with Heroku integration
 gem 'rails_12factor', group: :production
+
+# Twitter BootStrap Rails
+group :assets do
+gem 'twitter-bootstrap-rails'
+end 
+
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
+  gem 'hub', :require=>nil
+  gem 'quiet_assets'
+  gem 'rails_layout'
+end
 
 # Use postgresql as the database for Active Record
 gem 'pg'

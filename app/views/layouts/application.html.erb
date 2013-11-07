@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Galums</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "GAlums" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "GAlums" %>">
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag "flat-ui", media: "all", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag "flat-buttons", media: "all", "data-turbolinks-track" => true %>
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <%= favicon_link_tag 'favicon.ico' %>
 
-<%= yield %>
 
-</body>
+  </head>
+
+
+  <body>
+    <%# application layout styled for Twitter Bootstrap 2.3 %>
+    <header class="navbar navbar-fixed-top">
+      <nav class="navbar-inner">
+        <div class="container">
+          <%= render 'layouts/navigation' %>
+        </div>
+      </nav>
+    </header>
+    <main role="main">
+
+      <div class="container">
+        <div class="content">
+           <div class="row">
+            <div class="span12">
+            
+              <%= yield %>
+            </div>
+          </div>
+          <footer>
+            <%= render 'layouts/footer' %>
+          </footer>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
