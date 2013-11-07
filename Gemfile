@@ -10,8 +10,11 @@ gem 'rails_12factor', group: :production
 
 # Twitter BootStrap Rails
 group :assets do
-gem 'twitter-bootstrap-rails'
+gem "twitter-bootstrap-rails"
 end 
+
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 4.0.0'
 
 
 group :development do
