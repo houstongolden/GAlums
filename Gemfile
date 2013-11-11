@@ -8,6 +8,8 @@ gem 'rails', '4.0.0'
 # this gem helps with Heroku integration
 gem 'rails_12factor', group: :production
 
+gem 'devise'
+
 # Twitter BootStrap Rails
 group :assets do
 gem "twitter-bootstrap-rails"
