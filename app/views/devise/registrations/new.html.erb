@@ -5,13 +5,13 @@
 	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
 	  <%= devise_error_messages! %>
 
-	  <div><%= f.label :email %><br />
+	  <div>
 	  <%= f.email_field :email, :class => "sign_up_text" %></div>
 
-	  <div><%= f.label :password %><br />
+	  <div>
 	  <%= f.password_field :password, :class => "sign_up_text" %></div>
 
-	  <div><%= f.label :password_confirmation %><br />
+	  <div>
 	  <%= f.password_field :password_confirmation, :class => "sign_up_text" %></div>
 
 	  <div><%= f.submit "Sign up" %></div>

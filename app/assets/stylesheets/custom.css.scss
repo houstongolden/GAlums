@@ -13,6 +13,28 @@
 .sign_in_form {
 	margin: 0 auto;
 	text-align: center;
+  font-family: 'PF Din Text Comp Pro'; 
+  color: #E3E3E3;
+  font-size: 35px;
+
+}
+
+
+.notice {
+  margin: 0 auto;
+  
+  text-align: center;
+  font-family: 'PF Din Text Comp Pro'; 
+  color: #E3E3E3;
+  font-size: 35px;
+}
+
+.alert {
+  margin-right: 200px;
+  text-align: center;
+  font-family: 'PF Din Text Comp Pro'; 
+  color: #ADADAD;
+  font-size: 35px;
 }
 
 .sign_up_text {
@@ -57,6 +79,13 @@ h1 {
     font-size: 200px;
 }
 
+
+.devise_ers {
+text-align: center;
+    font-family: 'PF Din Text Comp Pro'; 
+    color: #E3E3E3;
+    font-size: 100px;
+  }
 
 .nav ul {
 	display: inline;
