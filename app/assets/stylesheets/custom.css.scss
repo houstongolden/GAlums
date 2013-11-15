@@ -7,8 +7,38 @@
 .center div {
 	display: block;
 	text-align: center;
-
 }
+
+
+.sign_in_form {
+	margin: 0 auto;
+	text-align: center;
+}
+
+.sign_up_text {
+  border-radius: 5px;
+  border: 2px solid black;
+  outline-width: 0;
+  color: #526476;
+  font-size: 18px;
+  padding: 10px;
+  margin-left: 20px;
+  display: inline-block;
+  font-family: 'Raleway', sans-serif;
+}
+
+.sign_up_text:focus {
+  border-radius: 10px;
+  border: 5px solid #CF5780;
+  outline-width: 0;
+  color: #526476;
+  font-size: 20px;
+  padding: 10px;
+  margin-left: 20px;
+  display: inline-block;
+  font-family: 'Raleway', sans-serif;
+}
+
 
 .center img {
     display: block;
