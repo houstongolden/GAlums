@@ -1,13 +1,18 @@
 
+@font-face {
+	font-family: 'PF Din Text Comp Pro';
+	src: url('https://s3.amazonaws.com/uploads.hipchat.com/39979/464263/JgvJWoFrkFOEKSj/pfdintextcomppro-webfont-1500bb2e28038e3cf88ec8983e20ad9a.woff') format('woff');
+	}
+
 .center div {
 	display: block;
+	text-align: center;
 
 }
 
 .center img {
     display: block;
     margin: 0 auto;
-    width: 300px;
 }
 
 iframe.github-btn {
@@ -17,7 +22,18 @@ iframe.github-btn {
 
 h1 {
 	text-align: center;
-    font-family: Impact; 
+    font-family: 'PF Din Text Comp Pro'; 
     color: #E3E3E3;
+    font-size: 200px;
 }
+
+
+.nav ul {
+	display: inline;
+}
+
+footer {
+	background-color: #E3E3E3;
+}
+
 

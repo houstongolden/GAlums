@@ -1,12 +1,44 @@
-<ul class="nav">
-  <a href="/">
-    </a>
-</ul>
+<div class="container">
 
-<ul class="nav pull-right">
-     
+  <ul class="nav" style="margin-top: -5px;">
+    <li><a href="/">
+        <img alt="Civly" src="http://cloud-media.com/wp-content/uploads/2013/11/GAlums-logo-beta-2.png">
+      </a></li>
+  </ul>
 
- </ul>
+  <ul class="nav" style="margin-top: 6px;">
+    
+    <li><%= link_to 'About', :controller => "/pages", :action => "about" %></li>
+    <li><%= link_to 'Alums', :controller => "/pages", :action => "alums" %></li>
+    <li><%= link_to 'Projects', :controller => "/pages", :action => "projects" %></li>
+    <li><%= link_to 'Locations', :controller => "/pages", :action => "locations" %></li>
+
+  </ul>
+
+  <ul class="nav pull-right" style="margin-top: 6px;">
+  	
+            <li>
+              <% if current_user == nil %>
+                        
+                <li style="font-size: 10px; margin-right: 10px;">
+             	   <%= link_to "Log In", "authentications/new", :class => "login_btn" %>
+              <% end %>
+            </li>
+
+            <li>         	
+              <% if current_user %>
+
+                <%= link_to(image_tag("http://icons.iconarchive.com/icons/visualpharm/ios7v2/48/Users-User-male-2-icon.png"), current_user, :class => "profile_link") %>
+
+                <%= link_to "Log Out", "/logout" %>
+              <% end %>
+            </li>
+
+   </ul>
+
+</div>
+
+
 
 
 
