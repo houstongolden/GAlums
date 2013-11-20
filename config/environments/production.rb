@@ -25,6 +25,16 @@ Galums::Application.configure do
   # added with Devise gem
   config.action_mailer.default_url_options = { :host => 'http://galums.herokuapp.com' }
 
+  # SendGrid configuration with Heroku
+ActionMailer::Base.smtp_settings = {
+  :address        => 'smtp.sendgrid.net',
+  :port           => '587',
+  :authentication => :plain,
+  :user_name      => ENV['app19265108@heroku.com'],
+  :password       => ENV['4fyzkaov'],
+  :domain         => 'galums.herokuapp.com',
+  :enable_starttls_auto => true
+}
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
