@@ -8,6 +8,10 @@ gem 'rails', '4.0.0'
 # this gem helps with Heroku integration
 gem 'rails_12factor', group: :production
 
+gem 'dotenv', :group => [:development, :test]
+
+gem 'mailcatcher', :group => :development
+
 gem 'devise'
 
 gem 'omniauth'
