@@ -10,6 +10,12 @@ gem 'rails_12factor', group: :production
 
 gem 'devise'
 
+gem 'omniauth'
+
+gem 'omniauth-twitter'
+
+gem "nifty-generators", :group => :development
+
 # Twitter BootStrap Rails
 group :assets do
 gem "twitter-bootstrap-rails"
@@ -67,3 +73,5 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem "mocha", group: :test

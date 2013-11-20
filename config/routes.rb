@@ -1,11 +1,12 @@
 Galums::Application.routes.draw do
 
-
+  resources :authentications
   devise_for :users
   root 'welcome#index'
+  get '/auth/:provider/callback' => 'authentications#create'
+
 
   resources :users
-
 
 
   devise_scope :user do
