@@ -1,0 +1,34 @@
+<%= link_to "View All Profiles", profiles_path %>
+
+<h1> <%= @profile.first_name %> <%= @profile.last_name %></h1>
+<h3> <%= @profile.contact_email %> </h3>
+
+<p><% if current_user.profile.id == @profile.id %>
+	<%= link_to "Edit Profile", edit_profile_path %> | 
+	<%= link_to "Add Project", new_project_path %>
+<% end %></p>
+	
+	<% if @profile.photo %>
+			<%= image_tag @profile.photo.url(:medium) %>
+	<% end %>
+
+<% if current_user.profile.id == @profile.id %>
+	<%= form_for @profile.microposts.new , url: {controller: :profiles, action: :post}   do |f| %>
+   <%= f.label "What's up?" %>
+   <%= f.text_field :content %>
+   <%= f.submit "Post Status" %>
+	<% end %>
+<% end %>
+
+
+<% if @profile.microposts.blank? == false %>
+	<div class="micro">
+		<h3>Status Updates:</h3>
+	<% @profile.microposts.each do |p| %>
+	  	<p class="posts">
+			<%= p.content %>
+		</p>
+	<% end %>
+
+	</div>
+<% end %>
