@@ -21,6 +21,7 @@ gem 'omniauth-twitter'
 gem "nifty-generators", :group => :development
 
 gem 'aws-sdk'
+gem "paperclip", "~> 3.0"
 
 # Twitter BootStrap Rails
 group :assets do
