@@ -17,3 +17,6 @@
 
 # Ignore DotEnv
 .env
+
+# Ignore local Paperclip files
+/public/system
