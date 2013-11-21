@@ -35,6 +35,7 @@ group :development do
   gem 'hub', :require=>nil
   gem 'quiet_assets'
   gem 'rails_layout'
+  gem "paperclip", "~> 3.0"
 end
 
 # Use postgresql as the database for Active Record

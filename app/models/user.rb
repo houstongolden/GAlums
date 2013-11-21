@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :authentications
-
+  has_one :profile
 
   after_create :create_profile
   # Include default devise modules. Others available are:
