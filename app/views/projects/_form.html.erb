@@ -1,0 +1,19 @@
+<%= form_for @project do |f| %>
+	
+	<p>
+		<%= f.text_field :proj_name %>
+		<%= f.label "Project Name:" %>
+	</p>
+	<p>
+		<%= f.text_field :proj_url %>
+		<%= f.label "Project URL:" %>
+	</p>
+	<p>
+		<%= f.text_field :proj_github %>
+		<%= f.label "Github URL?" %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+
+<% end %>

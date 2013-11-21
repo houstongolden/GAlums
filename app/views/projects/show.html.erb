@@ -1,0 +1,17 @@
+<h1>List of Projects</h1>
+
+  
+  	<h2><%= @project.proj_name %></h2>
+	<p><%= @project.proj_url %></p>
+	<p>Project has <%= pluralize(@project.profiles.count, "Alum Members") %></p>
+	<ul>
+		<% @project.profiles.each do |p|%>
+		<li>
+			<%= link_to p.contact_email, p %>
+		</li>
+		<% end %>
+	</ul>
+
+<p>
+	<%= link_to "View All Projects", projects_path %>
+</p>

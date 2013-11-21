@@ -1,0 +1,22 @@
+<h1>Update Project Details</h1>
+
+<% unless  @project.profiles.where(id: current_user.profile.id).empty?  %>
+<div class="form"><%= render 'form' %></div> 
+<% else %>
+	<p>Project Name: <%= @project.proj_name %></p>
+	<p>Project URL: <%= link_to "#{@project.proj_url}", "http://#{@project.proj_url}" %></p>
+	<% if  @project.proj_github %>
+		<p>Github URL: <%= link_to "#{@project.proj_github}", "http://#{@project.proj_github}" %></p>
+	<% end %>
+<% end %>
+
+<div class="project-members">
+	<p>Project has <%= pluralize(@project.profiles.count, 'Alum Member') %></p>
+	<ul>
+		<% @project.profiles.each do |profile|%>
+		<li>
+			<%= link_to "#{profile.first_name} #{profile.last_name}", profile%> 
+		</li>
+		<% end %>
+	</ul>
+</div>
