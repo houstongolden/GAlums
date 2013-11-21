@@ -1,5 +1,11 @@
 Galums::Application.routes.draw do
 
+  resources :microposts
+
+  resources :profiles
+
+  resources :projects
+
   resources :authentications
   devise_for :users
   root 'welcome#index'
