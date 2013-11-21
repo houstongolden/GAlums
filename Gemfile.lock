@@ -27,6 +27,10 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.1)
     atomic (1.1.14)
+    aws-sdk (1.27.0)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
+      uuidtools (~> 2.1)
     bcrypt-ruby (3.1.2)
     better_errors (1.0.1)
       coderay (>= 1.0.0)
@@ -86,11 +90,14 @@ GEM
       thin
     metaclass (0.0.1)
     mime-types (1.25)
+    mini_portile (0.5.2)
     minitest (4.7.5)
     mocha (0.14.0)
       metaclass (~> 0.0.1)
     multi_json (1.8.2)
     nifty-generators (0.4.6)
+    nokogiri (1.6.0)
+      mini_portile (~> 0.5.0)
     oauth (0.4.7)
     omniauth (1.1.4)
       hashie (>= 1.2, < 3)
@@ -187,6 +194,7 @@ GEM
     uglifier (2.3.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    uuidtools (2.1.4)
     warden (1.2.3)
       rack (>= 1.0)
 
@@ -194,6 +202,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aws-sdk
   better_errors
   binding_of_caller
   coffee-rails (~> 4.0.0)

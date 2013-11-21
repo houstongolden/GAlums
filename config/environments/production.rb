@@ -37,6 +37,16 @@ Galums::Application.configure do
       :enable_starttls_auto => true
     }
 
+  # config/environments/production.rb
+    config.paperclip_defaults = {
+      :storage => :s3,
+      :s3_credentials => {
+        :bucket => ENV['GAlumes'],
+        :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+        :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+      }
+    }
+
 
   # SendGrid configuration with Heroku
 # Devise::Base.smtp_settings = {
