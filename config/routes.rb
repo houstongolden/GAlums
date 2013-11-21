@@ -1,6 +1,9 @@
 Galums::Application.routes.draw do
 
-  resources :microposts
+
+  post 'profiles/:id/post' => 'profiles#post'
+  get 'profiles/:id/posts' => 'profiles#show_micro'
+  get 'projects/index.json' => 'projects#index'
 
   resources :profiles
 
