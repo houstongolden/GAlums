@@ -9,26 +9,26 @@
   <ul class="nav" style="margin-top: 6px;">
     
     
-    <li><%= link_to 'Alums', :controller => "/pages", :action => "alums" %></li>
-    <li><%= link_to 'Projects', :controller => "/pages", :action => "projects" %></li>
-    <li><%= link_to 'Locations', :controller => "/pages", :action => "locations" %></li>
+    <li><%= link_to 'Alums', profiles_path %></li>
+    <li><%= link_to 'Projects', projects_path %></li>
+    <li><%= link_to 'Cohorts', :controller => "/pages", :action => "locations" %></li>
     <li><%= link_to 'About', :controller => "/pages", :action => "about" %></li>
   </ul>
 
   <ul class="nav pull-right" style="margin-top: 6px;">
-  	
+    
             <li>
               <% if current_user == nil %>
                         
                 <li style="font-size: 10px; margin-right: 10px;">
-             	   <%= link_to "Log In", "/users/sign_in", :class => "login_btn" %>
+                 <%= link_to "Log In", "/users/sign_in", :class => "login_btn" %>
               <% end %>
             </li>
 
-            <li>         	
+            <li>          
               <% if current_user %>
 
-                <%= link_to(image_tag("http://icons.iconarchive.com/icons/visualpharm/ios7v2/48/Users-User-male-2-icon.png"), current_user, :class => "profile_link") %>
+                <%= link_to(image_tag("http://icons.iconarchive.com/icons/visualpharm/ios7v2/48/Users-User-male-2-icon.png"), current_user.profile, :class => "profile_link") %>
 
                 <%= link_to "Log Out", "/logout" %>
               <% end %>
@@ -37,18 +37,6 @@
    </ul>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
