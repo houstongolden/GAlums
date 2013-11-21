@@ -9,4 +9,19 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Galums::Application.config.secret_key_base = 'a8ea8918cd49d81c4ce0d475571256603ea44f580f0ca66a13f45ff8ec9c14c3d25abba91aba7ba17230dcbf16e587e51b4085e7d58c6526f8c12f38ecda81bb'
+require 'securerandom'
+
+def secure_token
+  token_file = Rails.root.join('.secret')
+  if File.exist?(token_file)
+    # Use the existing token.
+    File.read(token_file).chomp
+  else
+    # Generate a new token and store it in token_file.
+    token = SecureRandom.hex(64)
+    File.write(token_file, token)
+    token
+  end
+end
+
+Galums::Application.config.secret_key_base = secure_token
