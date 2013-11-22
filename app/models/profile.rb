@@ -10,5 +10,4 @@ class Profile < ActiveRecord::Base
 					   :bucket => "galums",
 					   :s3_permissions => :public_read,
 					   :encode => "utf8"
-
 end
