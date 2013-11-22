@@ -19,6 +19,13 @@
 
 }
 
+.profiles {
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'PF Din Text Comp Pro'; 
+  color: #ACACAC;
+  font-size: 35px;
+}
 
 .notice {
   margin: 0 auto;
@@ -93,6 +100,8 @@ text-align: center;
 
 footer {
 	background-color: #E3E3E3;
+  position: fixed;
+  margin-bottom: 0px;
 }
 
 

@@ -1,46 +1,54 @@
-<%= link_to "View All Profiles", profiles_path %>
+<div class="profiles" style="text-align: left; margin-left: 20px;">
 
-<h1> <%= @profile.first_name %> <%= @profile.last_name %></h1>
-<h3> <%= @profile.contact_email %> </h3>
+	<h1> <%= @profile.first_name %> <%= @profile.last_name %></h1>
+	<h3> <%= @profile.contact_email %> </h3>
 
-<p><% if current_user.profile.id == @profile.id %>
-	<%= link_to "Edit Profile", edit_profile_path %> | 
-	<%= link_to "Add Project", new_project_path %>
-<% end %></p>
-	
-	<% if @profile.photo %>
-			<%= image_tag @profile.photo.url(:medium) %>
-	<% end %>
-	
-	<% if @profile.linkedin_url %>
-		<p><%= @profile.linkedin_url %></p>
-	<% end %>
+	<p><% if current_user.profile.id == @profile.id %>
+		<%= link_to "Edit Profile", edit_profile_path %> | 
+		<%= link_to "Add Project", new_project_path %>
+		<%= link_to "View All Profiles", profiles_path, :class => "sign_up_text" %>
 
-	<% if @profile.github_url %>
-		<p><%= @profile.github_url %></p>
-	<% end %>
+	<% end %></p>
+		
+		<% if @profile.photo %>
+				<%= image_tag @profile.photo.url(:medium) %>
+		<% end %>
+		
+		<% if @profile.linkedin_url %>
+			<p><%= @profile.linkedin_url %></p>
+		<% end %>
 
-	<p>
-		<%= @profile.bio %>
-	</p>
+		<% if @profile.github_url %>
+			<p><%= @profile.github_url %></p>
+		<% end %>
 
-<% if current_user.profile.id == @profile.id %>
-	<%= form_for @profile.microposts.new , url: {controller: :profiles, action: :post}   do |f| %>
-   <%= f.label "What's up?" %>
-   <%= f.text_field :content %>
-   <%= f.submit "Post Status" %>
-	<% end %>
-<% end %>
-
-
-<% if @profile.microposts.blank? == false %>
-	<div class="micro">
-		<h3>Status Updates:</h3>
-	<% @profile.microposts.each do |p| %>
-	  	<p class="posts">
-			<%= p.content %>
+		<p>
+			<%= @profile.bio %>
 		</p>
+
+</div>
+
+<div class="profiles" style="text-align: right; margin-top: -500px; margin-right: 20px;"
+
+	<% if current_user.profile.id == @profile.id %>
+		<%= form_for @profile.microposts.new , url: {controller: :profiles, action: :post}   do |f| %>
+	   <%= f.label "What's up?" %>
+	   <%= f.text_field :content %>
+	   <%= f.submit "Post Status" %>
+		<% end %>
 	<% end %>
 
-	</div>
-<% end %>
+
+	<% if @profile.microposts.blank? == false %>
+		<div class="micro">
+			<h3>Status Updates:</h3>
+		<% @profile.microposts.each do |p| %>
+		  	<p class="posts">
+				<%= p.content %>
+			</p>
+		<% end %>
+
+		</div>
+	<% end %>
+
+</div>

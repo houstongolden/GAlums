@@ -1,12 +1,15 @@
-<h1>Developer Profiles</h1>
+<div class="profiles">
+	
+	<h1>Developer Profiles</h1>
 
-<% @profiles.each do |p| %>
+	<% @profiles.each do |p| %>
 
-	<p>
-		<%= image_tag p.photo.url(:thumb) %>
-		<%= link_to p.contact_email, profile_path(p) %> |
-		<%= pluralize(p.microposts.count, 'status update') %>
-	</p>
+		<p>
+			<%= image_tag p.photo.url(:thumb) %>
+			<%= link_to p.contact_email, profile_path(p) %> |
+			<%= pluralize(p.microposts.count, 'status update') %>
+		</p>
 
-<% end %>
+	<% end %>
 
+</div>

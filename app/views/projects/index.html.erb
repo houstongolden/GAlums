@@ -1,19 +1,23 @@
-<h1>List of Projects</h1>
+<div class="sign_up_text">
 
-<%  @projects.each do |p| %>
-  
-  <div>
-  	<h2><%= link_to p.proj_name, p %></h2>
-	<p><%= p.proj_url %></p>
-	<p>Project has <%= pluralize(p.profiles.count, 'Alum Member') %></p>
-	<ul>
-		<% p.profiles.each do |profile|%>
-		<li>
-			<%= link_to "#{profile.first_name} #{profile.last_name}", profile%> 
-		</li>
-		<% end %>
-	</ul>
-	<p><%= link_to "Did you work on this Project?", edit_project_path(p) %></p>
-  </div>
+	<h1>List of Projects</h1>
 
-<% end %>
+	<%  @projects.each do |p| %>
+	  
+	  <div>
+	  	<h2><%= link_to p.proj_name, p %></h2>
+		<p><%= p.proj_url %></p>
+		<p>Project has <%= pluralize(p.profiles.count, 'Alum Member') %></p>
+		<ul>
+			<% p.profiles.each do |profile|%>
+			<li>
+				<%= link_to "#{profile.first_name} #{profile.last_name}", profile%> 
+			</li>
+			<% end %>
+		</ul>
+		<p><%= link_to "Did you work on this Project?", edit_project_path(p) %></p>
+	  </div>
+
+	<% end %>
+
+</div>
