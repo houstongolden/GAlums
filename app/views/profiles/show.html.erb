@@ -11,6 +11,18 @@
 	<% if @profile.photo %>
 			<%= image_tag @profile.photo.url(:medium) %>
 	<% end %>
+	
+	<% if @profile.linkedin_url %>
+		<p><%= @profile.linkedin_url %></p>
+	<% end %>
+
+	<% if @profile.github_url %>
+		<p><%= @profile.github_url %></p>
+	<% end %>
+
+	<p>
+		<%= @profile.bio %>
+	</p>
 
 <% if current_user.profile.id == @profile.id %>
 	<%= form_for @profile.microposts.new , url: {controller: :profiles, action: :post}   do |f| %>

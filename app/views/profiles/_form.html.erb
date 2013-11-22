@@ -11,6 +11,18 @@
   	<%= f.label :contact_email  %> <br>
     <%= f.text_field :contact_email %>
   </p>
+  <p>
+    <%= f.label "Github account"  %> <br>
+    <%= f.text_field :github_url %>
+  </p>
+  <p>
+    <%= f.label "Linkedin account"  %> <br>
+    <%= f.text_field :linkedin_url %>
+  </p>
+  <p>
+    <%= f.label "Personal Info"  %> <br>
+    <%= f.text_area :bio %>
+  </p>
   <% if @profile.photo.blank? == false %>
   <p>
     <%= image_tag @profile.photo.url(:medium) %>
