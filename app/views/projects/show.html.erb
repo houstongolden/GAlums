@@ -1,6 +1,6 @@
 <h1>List of Projects</h1>
 
-  
+  <p><% if current_user.profile.id == @profile.id %>
   	<h2><%= @project.proj_name %></h2>
 	<p><%= @project.proj_url %></p>
 	<p>Project has <%= pluralize(@project.profiles.count, "Alum Members") %></p>
@@ -11,6 +11,7 @@
 		</li>
 		<% end %>
 	</ul>
+	<% end %> </p>
 
 <p>
 	<%= link_to "View All Projects", projects_path %>
