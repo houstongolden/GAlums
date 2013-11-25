@@ -33,13 +33,12 @@
 
 </div>
 
-<div class="profiles" style="font-family: 'Raleway', sans-serif; width: 300px; text-align: right; margin-top: -350px; margin-right: 50px;">
+<div class="profiles" style="font-family: 'Raleway', sans-serif; width: 300px; text-align: right; margin-top: -450px; margin-right: 50px;">
 
-<br />
 <br />
 
 	<% if @profile.microposts.blank? == false %>
-		<div class="micro" style="font-family: 'Raleway', sans-serif; width: 300px; text-align: right; margin-top: -500px; margin-right: 20px;">
+
 			<h3>Status Updates:</h3>
 		<% @profile.microposts.each do |p| %>
 		  	<p class="posts">
@@ -47,7 +46,7 @@
 			</p>
 		<% end %>
 
-		</div>
+
 
 	<% if current_user.profile.id == @profile.id %>
 		<%= form_for @profile.microposts.new , url: {controller: :profiles, action: :post}   do |f| %>
