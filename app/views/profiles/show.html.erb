@@ -1,7 +1,7 @@
 <div class="profiles" style="text-align: left; margin-left: 20px;">
 
-	<h1> <%= @profile.first_name %> <%= @profile.last_name %></h1>
-	<h3> <%= @profile.contact_email %> </h3>
+	<h1 style="text-align: center; font-family: 'Raleway', sans-serif;"> <%= @profile.first_name %> <%= @profile.last_name %></h1>
+	<h3 style="text-align: center; font-family: 'Raleway', sans-serif;"> <%= @profile.contact_email %> </h3>
 
 	<p><% if current_user.profile.id == @profile.id %>
 		<%= link_to "Edit Profile", edit_profile_path %> | 
@@ -27,13 +27,13 @@
 		
 		<% end %>
 
-		<p style="width: 300px;">
+		<p style="text-align: center; font-family: 'Raleway', sans-serif; width: 300px;">
 			<%= @profile.bio %>
 		</p>
 
 </div>
 
-<div class="profiles" style="text-align: right; margin-top: -500px; margin-right: 20px;">
+<div class="profiles" style="font-family: 'Raleway', sans-serif; width: 300px; text-align: right; margin-top: -350px; margin-right: 50px;">
 
 <br />
 <br />
@@ -41,15 +41,14 @@
 
 	<% if current_user.profile.id == @profile.id %>
 		<%= form_for @profile.microposts.new , url: {controller: :profiles, action: :post}   do |f| %>
-	   <%= f.label "What's up?" %>
-	   <%= f.text_field :content %>
+	   <%= f.text_field :content, :class => "sign_up_text", :placeholder => "What's on your mind?" %>
 	   <%= f.submit "Post Status" %>
 		<% end %>
 	<% end %>
 
 
 	<% if @profile.microposts.blank? == false %>
-		<div class="micro">
+		<div class="micro" style="font-family: 'Raleway', sans-serif; width: 300px; text-align: right; margin-top: -500px; margin-right: 20px;">
 			<h3>Status Updates:</h3>
 		<% @profile.microposts.each do |p| %>
 		  	<p class="posts">
