@@ -38,16 +38,6 @@
 <br />
 <br />
 
-
-	<% if current_user.profile.id == @profile.id %>
-		<%= form_for @profile.microposts.new , url: {controller: :profiles, action: :post}   do |f| %>
-
-	   <%= f.text_field :content, :placeholder => "What's on your mind?" %>
-	   <%= f.submit "Post Status" %>
-		<% end %>
-	<% end %>
-
-
 	<% if @profile.microposts.blank? == false %>
 		<div class="micro" style="font-family: 'Raleway', sans-serif; width: 300px; text-align: right; margin-top: -500px; margin-right: 20px;">
 			<h3>Status Updates:</h3>
@@ -58,6 +48,15 @@
 		<% end %>
 
 		</div>
+
+	<% if current_user.profile.id == @profile.id %>
+		<%= form_for @profile.microposts.new , url: {controller: :profiles, action: :post}   do |f| %>
+
+	   <%= f.text_field :content, :placeholder => "What's on your mind?" %>
+	   <%= f.submit "Post Status" %>
+		<% end %>
+	<% end %>
+
 	<% end %>
 
 </div>
