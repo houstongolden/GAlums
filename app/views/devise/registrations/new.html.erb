@@ -6,13 +6,13 @@
 	  <%= devise_error_messages! %>
 
 	  <div>
-	  <%= f.email_field :email, :class => "sign_up_text" %></div>
+	  <%= f.email_field :email, :class => "sign_up_text", :placeholder => "Email" %></div>
 
 	  <div>
-	  <%= f.password_field :password, :class => "sign_up_text" %></div>
+	  <%= f.password_field :password, :class => "sign_up_text", :placeholder => "Password" %></div>
 
 	  <div>
-	  <%= f.password_field :password_confirmation, :class => "sign_up_text" %></div>
+	  <%= f.password_field :password_confirmation, :class => "sign_up_text", :placeholder => "Password Confirmation" %></div>
 
 	  <div><%= f.submit "Sign up" %></div>
 	<% end %>
