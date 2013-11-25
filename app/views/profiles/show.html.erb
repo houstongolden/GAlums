@@ -28,7 +28,7 @@
 
 </div>
 
-<div class="profiles" style="text-align: right; margin-top: -500px; margin-right: 20px;"
+<div class="profiles" style="text-align: right; margin-top: -500px; margin-right: 20px;">
 
 	<% if current_user.profile.id == @profile.id %>
 		<%= form_for @profile.microposts.new , url: {controller: :profiles, action: :post}   do |f| %>
