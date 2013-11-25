@@ -13,22 +13,31 @@
 		<% if @profile.photo %>
 				<%= image_tag @profile.photo.url(:medium) %>
 		<% end %>
+		<br />
 		
 		<% if @profile.linkedin_url %>
-			<p><%= @profile.linkedin_url %></p>
+		
+				<a href="<%= @profile.linkedin_url %>"><img src="http://www.mckimcreed.com/content/images/shared/icon_linkedin48.png" /></a>
+			
 		<% end %>
 
 		<% if @profile.github_url %>
-			<p><%= @profile.github_url %></p>
+		
+				<a href="http://<%= @profile.github_url %>"><img src="http://komelin.com/sites/all/themes/komelin/images/icons/github.jpg" /></a>
+		
 		<% end %>
 
-		<p>
+		<p style="width: 300px;">
 			<%= @profile.bio %>
 		</p>
 
 </div>
 
 <div class="profiles" style="text-align: right; margin-top: -500px; margin-right: 20px;">
+
+<br />
+<br />
+
 
 	<% if current_user.profile.id == @profile.id %>
 		<%= form_for @profile.microposts.new , url: {controller: :profiles, action: :post}   do |f| %>
@@ -52,3 +61,19 @@
 	<% end %>
 
 </div>
+
+
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
